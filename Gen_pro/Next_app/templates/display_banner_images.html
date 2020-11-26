@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    
+    <meta charset="UTF-8"> 
+    <title>Banner Images</title> 
+  
+      <meta name="viewport" content="width=device-width, initial-scale=1"> 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+      </script> 
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> 
+      </script> 
+</head> 
+<body style="background-color: azure;"> 
+    <center><h1>Banner Images</h1>  </center>
+  <div style="font-size: 25px; padding-left: 30px; padding-top: 20px;">
+    <table border="all">
+        <th>Name</th>
+        <th>Images</th>
+        <th>Remark</th>
+    {% for banner in banner_images %} 
+            
+                <tr>
+                  <td>  {{ banner.name }} </td>
+                    <td> <img src="{{ banner.banner_image.url }}" style="width: 150px; height: 100px; "></td>
+            
+              <td>      <h4><a href="delete/{{banner.id}}" style="color: crimson; font-style: italic; padding-top: 10px; font-size: 22px;">Delete</h4></a>
+              </td> </tr>
+               
+                 
+    {% endfor %}
+  </table> 
+            </div>
+            <br><br>
+    <center> <a href="admin"><button type="submit" style="font-size: 22px; background-color: blue; color: white; ">Back Admin Menu</button></a></center><br><br>
+    <center> <a href="banner_upload"><button type="submit" style="font-size: 22px; background-color: blue; color: white; ">Upload Again Banner Image</button></a></center>
+</body> 
+</html> 
